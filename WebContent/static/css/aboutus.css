@@ -1,0 +1,133 @@
+a{
+	color: #ffffff;
+}
+p{
+	color: #ffffff;
+	text-indent:2em;
+}
+.title{
+	background-color: #ffffff;
+	height: 4rem;
+	color: #272822;
+}
+.title div{
+	text-align: center;
+	height: 4rem;
+	line-height: 4rem;
+	margin: auto;
+	font-weight: bolder;
+}
+.title img{
+	height: 2rem;
+}
+.gempty{
+	width: 100%;
+	height: 0.2rem;
+	margin: 0.4rem 0 0.4rem 0;
+	background-color: #F4F4F4;
+}
+.nav-tabs > li{
+	float: none;
+}
+.nav-tabs > li > a{
+	border: none;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover{
+	border: none;
+}
+.nav > li > a:focus, .nav > li > a:hover,.nav > li > a:link{
+	background-color: #ffffff;
+}
+.con{
+	padding-left: 0;
+}
+#myTab{
+	background-color: #F86941;
+	min-width: 6rem;
+	height: 40rem;
+}
+#myTab li{
+	/*padding: 0;*/
+	width: 100%;
+	border:none;
+	text-align: center;
+}
+#myTab li a{
+	color: #ffffff;
+	border:none;
+	background-color: #F86941;
+	width: 6rem;
+	overflow: hidden;
+	margin: 0 auto;
+	font-size: 1.2rem;
+}
+#myTab li a img{
+	width: 2.2rem;
+}
+#txt_cen{
+	text-align: center;
+	height: 4rem;
+	line-height: 4rem;
+}
+#txt_cen a:hover{
+	color: #fff;
+	text-decoration: none;
+}
+.mi_a{
+	height: 100%;
+	color: #ffffff;
+	text-indent:2em;
+	height: 30rem;
+	display: block;
+	overflow: hidden;
+	text-decoration: none;
+}
+.mi_a:hover{
+	text-decoration: none;
+	color: #ffffff;
+}
+.bblu{
+	background-color: #2066B2;
+	height: 50rem;
+	margin-bottom:2rem;
+}
+.zzz{
+	top: 5rem;
+	position: relative;
+	border: 1px solid #ffffff;
+	border-radius: 2rem;
+}
+.last{
+	text-align: center;
+}
+.last div{
+	height: 3.4rem;
+	line-height: 3.4rem;
+	font-size: 1.2rem;
+	padding:0;
+}
+.last div img{
+	width: 2rem;
+	margin-top: -0.6rem;
+}
+.last div a:hover{
+	text-decoration: none;
+	color: #ffffff;
+}
+.end{
+	border: 1px solid #ffffff;
+	border-top: none;
+	border-bottom: none;
+}
+.sanjiao{
+	padding-left: 0;
+	margin-left: -15px;
+}
+.org img{
+	position: absolute;
+	width: 3.2rem;
+	height: 3.2rem;
+}
+#org_1{
+	margin: 1rem 0 0 0;
+}

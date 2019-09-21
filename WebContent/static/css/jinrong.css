@@ -1,0 +1,78 @@
+body{
+	background-image: url(../imgs/orgbg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.carousel-caption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 1rem;
+    z-index: 10;
+    padding-top: 0;
+    padding-bottom: 0.4rem;
+    color: #fff;
+    text-align: left;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 1rem;
+    z-index: 15;
+    width: 100%;
+    padding-left: 0;
+    margin-left: 0;
+    text-align: left;
+    list-style: none;
+}
+.carousel-indicators .active {
+    width: 22px;
+    height: 5px;
+    margin: 0;
+    background-color: #f86941;
+}
+.carousel-indicators li {
+    display: inline-block;
+    width: 22px;
+    height: 3px;
+    margin: 0;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 0px solid #fff;
+    border-radius: 0;
+}
+.container{
+	padding-top: 0;
+	padding-bottom: 0;
+    margin-top: 0.6rem;
+}
+.bian{
+	margin: 0 0.8rem 0 0.8rem;
+	background-color: #fff;
+	border-radius: 8px;
+}
+.bian img{
+    width: 100%;
+}
+.bian div{
+    line-height: 1.6rem;
+}
+.lft_img{
+	margin: 0;
+    padding: 0;
+    padding-right: 1.2rem;
+}
+.hepin{
+	font-size: 12px;
+	font-weight: bolder;
+}
+.youai{
+	font-size: 9px;
+	color: #969696;
+}
+.ziyou{
+	font-size: 10px;
+	white-space:nowrap;
+}

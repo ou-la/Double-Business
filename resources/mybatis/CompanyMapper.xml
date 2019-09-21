@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.repository.CompanyDao">
+	<resultMap id="base" type="BaseCompany"></resultMap>
+   
+    <select id="find"  resultMap="base" parameterType="BaseCompany">
+       	select c.* from company c
+		where 1=1
+       <if test="companyid !=null ">
+       		and c.companyid=#{companyid}
+       </if>
+       <if test="isOk !=null">
+       		and c.isOk=#{isOk}
+       </if>
+       <if test="typeisOk !=null">
+       		and c.typeisOk=#{typeisOk}
+       </if>
+       <if test="typeid !=null">
+       		and c.typeid=#{typeid}
+       </if>
+       
+    </select> 
+    
+    <select id="findByPage"  resultMap="base" parameterType="BaseCompany">
+       select * from company
+    </select>
+      
+    <select id="count"  resultType="int" parameterType="BaseCompany">
+       SELECT count(*) from company c WHERE 1=1 
+    </select>     
+    
+    <insert id="insert"  parameterType="BaseCompany">	
+ 	<![CDATA[
+	INSERT INTO company(companyid,companyname,boss,companytype，companyinfo,isOk,typeisOk,typeid) VALUES
+	 (#{companyid},#{companyname},#{boss},#{companytype},#{companyinfo},#{isOk},#{typeisOk},#{typeid});
+	]]>  
+	</insert>
+	
+	<delete id="delete" parameterType="BaseCompany">
+	DELETE FROM company  
+	WHERE 
+	<if test="companyid != null and companyid !='' ">
+        companyid=#{companyid}
+    </if>
+	</delete>
+	
+	<update id="update" parameterType="BaseCompany">
+		UPDATE company 
+		SET companyname=#{companyname},
+			boss=#{boss},
+			companytype=#{companytype},
+			companyinfo=#{companyinfo},
+			isOk=#{isOk},
+			typeisOk=#{typeisOk},
+			typeid=#{typeid}
+		WHERE companyid=#{companyid}
+	</update>
+	
+	<delete id="delAll" parameterType="java.util.List">
+	DELETE FROM company  
+	WHERE companyid in(
+		<foreach item="o" collection="list" open="" separator="," close="" >
+			#{o.companyid}
+		</foreach>
+		)
+	</delete>
+</mapper>

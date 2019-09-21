@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.repository.FjgxDao">
+<resultMap id="base" type="BaseFjgx"></resultMap>
+	<select id="find"  resultMap="base" parameterType="BaseFjgx">
+        SELECT * FROM fjgx;
+    </select> 
+    <select id="findByPage"  resultMap="base" parameterType="BaseFjgx">
+       SELECT * FROM fjgx 
+    </select>
+    <select id="findByFj"  resultMap="base" parameterType="BaseFjgx">
+       	select 
+			gx.*,
+			n.newstitle as newstitle,
+			f.fjname as fjname,
+			f.fjtime as fjtime,
+			f.fjurl as fjurl 
+			from fjgx gx
+			INNER JOIN newszx n on gx.newsid = n.newsid
+			INNER JOIN fj f on gx.fjid = f.fjid
+		where 1=1
+		<if test="newsid != null and newsid !='' ">
+       		and gx.newsid=#{newsid}
+    	</if>
+    </select>  
+    <select id="count"  resultType="int" parameterType="BaseFjgx">
+       SELECT count(*) FROM fjgx t WHERE 1=1 
+    </select>      
+    <insert id="insert"  parameterType="BaseFjgx">	
+ 	<![CDATA[
+	INSERT INTO fjgx VALUE
+	 (#{fjgxid},#{fjid},#{fjtype},#{ufjid},#{newsid},#{uname},#{fjgxtime},#{ramarkinfo},#{urlinfo});
+	]]>  
+	</insert>
+	<delete id="delete" parameterType="BaseFjgx">
+	DELETE FROM fjgx 
+	WHERE 
+	<if test="fjgxid != null and fjgxid!='' ">
+        fjgxid=#{fjgxid}
+    </if>
+	</delete>
+	<update id="update" parameterType="BaseFjgx">
+		UPDATE fjgx 
+		SET fjid=#{fjid},
+			fjtype=#{fjtype},
+			ufjid=#{ufjid},
+			newsid=#{newsid},
+			uname=#{uname},
+			fjgxtime=#{fjgxtime},
+			ramarkinfo=#{ramarkinfo},
+			urlinfo=#{urlinfo}
+		WHERE fjgxid=#{fjgxid}
+	</update>
+	
+</mapper>

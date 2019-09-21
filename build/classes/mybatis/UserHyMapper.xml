@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.repository.UserHyDao">
+	<resultMap id="base" type="BaseUserHy"></resultMap>
+    
+    <select id="find"  resultMap="base" parameterType="BaseUserHy">
+        SELECT * FROM userhy
+    </select> 
+    <select id="findByPage"  resultMap="base" parameterType="BaseUserHy">
+       SELECT * FROM userhy
+    </select>  
+    <select id="count"  resultType="int" parameterType="BaseUserHy">
+       SELECT count(*) FROM userhy t WHERE 1=1 
+    </select>      
+    <insert id="insert"  parameterType="BaseUserHy">	
+ 	<![CDATA[
+	INSERT INTO userhy(hyid,hyname,hystate,tophy) VALUES
+	 (#{hyid},#{hyname},#{hystate},#{tophy});
+	]]>  
+	</insert>
+	<delete id="delete" parameterType="BaseUserHy">
+	DELETE FROM userhy  
+	WHERE 
+	<if test="hyid != null and hyid!='' ">
+        hyid=#{hyid}
+    </if>
+	</delete>
+	<delete id="delAll" parameterType="java.util.List">
+	DELETE from userhy 
+	WHERE hyid in(
+		<foreach item="o" collection="list" open="" separator="," close="" >
+			#{o.hyid}
+		</foreach>
+		)
+	</delete>
+	<update id="update" parameterType="BaseUserHy">
+		UPDATE userhy 
+		SET hyname=#{hyname},
+			hystate=#{hystate},
+			tophy=#{tophy}
+		WHERE hyid=#{hyid}
+	</update>
+</mapper>

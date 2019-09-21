@@ -1,0 +1,89 @@
+input{
+	font-size: 2rem;
+	border-radius: 0.8rem;
+}
+a{
+	text-decoration: none;
+	color: #F86E48;
+}
+a:hover{
+	text-decoration: none;
+}
+.clear{
+	clear: both;
+}
+.bg{
+	width: 100%;
+}
+.bg div{
+	padding: 0;
+}
+.bg div img{
+	width: 100%;
+}
+
+#form_login_div{
+    display: block;
+	margin-top: -4.4rem;
+}
+#form_register_div{
+    display: none;
+	margin-top: -4.4rem;
+}
+.main{
+	text-align: center;
+}
+.main input{
+	background-color: rgba(0,0,0,0);
+	color: #ffffff;
+}
+.btn{
+	font-size: 2rem;
+	height: 100%;
+}
+.main-a{
+	margin: 2rem 0 2rem 0;
+}
+.main-a input{
+    width: 100%;
+    border: none;
+    padding-left: 7.4rem;
+    background-color: #F8F8F8;
+}
+.main-a input::-webkit-input-placeholder{
+	color: #B9B9B9;
+}
+.icon{
+	position: absolute;
+	background-repeat: no-repeat;
+	height: 100%;
+	margin: 0 1rem 0 1rem;
+	z-index: 1;
+}
+.main-b input{
+	width: 100%;
+    border: 0.2rem solid #272822;
+    margin: 2rem 0 2rem 0;
+    background-color: #ffffff;
+}
+.sp{
+	margin-bottom: 6rem;
+}
+.sp span{
+	font-size: 2rem;
+	height: auto;
+}
+.sanjiao{
+	width: 100%;
+	margin: -1.6rem auto;
+	z-index: 3;
+
+}
+.sanjiao img{
+	width: 2.4rem;
+	margin: 0 0 0 4.6rem;
+}
+#sanjiaol{
+	float: right;
+	margin: 0 4.6rem 0 0;
+}

@@ -1,0 +1,81 @@
+.imagetitle{
+	padding-right: 0;
+}
+.imagetitle div{
+	padding: 0;
+	color: #F86941;
+	font-size: 1.4rem;
+	font-weight: 500;
+}
+.imagetitle img{
+	width: 100%;
+}
+.daojishi{
+	text-align: right;
+	padding-top: 0.6rem !important;
+	padding-bottom: 0.4rem !important;
+}
+.canpintitle{
+	background-color: #2B6AB1;
+}
+.canpintitle div{
+	text-align: center;
+	margin-top: 1rem;
+}
+.canpintitle .tit1{
+	color: #fff;
+	font-size: 2rem;
+	font-weight: 600;
+}
+.canpintitle .tit2{
+	color: #C6D6E9;
+	font-size: 1.6rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+}
+.content{
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+.content div{
+	font-size: 1.4rem;
+	text-align: left;
+	line-height: 2.2rem;
+}
+.content_1{
+	font-weight: 500;
+	color: #F87854;
+}
+.content_2{
+	padding-top: 1rem;
+	color: #454545
+}
+.lins{
+	border-bottom: 1px solid #D4D4D4;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 1rem;
+}
+.lis{
+	font-weight: 1000;
+	margin-right: 1rem;
+}
+.content_2 img{
+	height: 2rem;
+	margin-left: -1rem;
+	margin-right: 1rem;
+}
+.duijie{
+	padding: 2rem;
+}
+.duijie_b{
+	text-align: center;
+	font-size: 1.6rem;
+	font-weight: 600;
+	color: #fff;
+	height: 4rem;
+	line-height: 4rem;
+	background-color: #F86941;
+	border-radius: 4px;
+	box-shadow: 0 0 0 0;
+}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.repository.NewsZxDao">
+	<resultMap id="base" type="BaseNewsZx"></resultMap>
+    
+    <select id="find"  resultMap="base" parameterType="BaseNewsZx">
+        SELECT * FROM newszx;
+    </select> 
+    <select id="findByPage"  resultMap="base" parameterType="BaseNewsZx">
+       	select * from newszx n
+		where 1=1
+		<if	test="param.lmid != null and param.lmid !=' ' ">
+			and n.lmid=#{param.lmid}
+		</if>
+		<if	test="param.zid != null and param.zid !=' ' ">
+			and n.zid=#{param.zid}
+		</if>
+    </select>  
+    <select id="count"  resultType="int" parameterType="BaseNewsZx">
+       SELECT count(*) FROM newszx t WHERE 1=1 
+    </select>      
+    <select id="findTree"  resultMap="base" parameterType="BaseNewsZx">
+		SELECT zx.*,lm.urllink AS lmLink,lm.lmname AS lmName,lm.lmimg AS lmImg
+		FROM newslm lm
+		RIGHT JOIN newszx zx 
+		ON lm.lmid = zx.lmid
+    </select> 
+    <insert id="insert"  parameterType="BaseNewsZx">	
+ 	<![CDATA[
+	INSERT INTO newszx(newsid,newstitle,newstime,username,newstext,fjid,lmid,zid,lookednum,newsgoods,commentnum) VALUES
+	 (#{newsid},#{newstitle},#{newstime},#{username},#{newstext},#{fjid},#{lmid},#{zid},#{lookednum},#{newsgoods},#{commentnum});
+	]]>  
+	</insert>
+	<delete id="delete" parameterType="BaseNewsZx">
+	DELETE FROM newszx  
+	WHERE 
+	<if test="newsid != null and newsid !='' ">
+        newsid=#{newsid}
+    </if>
+	</delete>
+	<delete id="delAll" parameterType="java.util.List">
+	DELETE from newszx 
+	WHERE newsid in(
+		<foreach item="o" collection="list" open="" separator="," close="" >
+			#{o.newsid}
+		</foreach>
+		)
+	</delete>
+	<update id="update" parameterType="BaseNewsZx">
+		UPDATE newszx 
+		SET newstitle=#{newstitle},
+			newstime=#{newstime},
+			username=#{username},
+			newstext=#{newstext},
+			fjid=#{fjid},
+			lmid=#{lmid},
+			zid=#{zid},
+			lookednum=#{lookednum},
+			newsgoods=#{newsgoods},
+			commentnum=#{commentnum}
+		WHERE newsid=#{newsid}
+	</update>
+</mapper>

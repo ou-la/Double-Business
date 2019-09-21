@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.repository.NewsLmDao">
+	<resultMap id="base" type="BaseNewsLm"></resultMap>
+    
+    <select id="find"  resultMap="base" parameterType="BaseNewsLm">
+		select * from newslm nl
+		where 1=1
+		<if	test="id != null and id !=' ' ">
+			and id=#{id}
+		</if>
+		<if	test="lmid != null and lmid !=' ' ">
+			and nl.lmid=#{lmid}
+		</if>
+    </select> 
+    <select id="findByPage"  resultMap="base" parameterType="BaseNewsLm">
+       SELECT * FROM newslm 
+    </select>  
+    <select id="count"  resultType="int" parameterType="BaseNewsLm">
+       SELECT count(*) FROM newslm t WHERE 1=1 
+    </select> 
+    <insert id="insert"  parameterType="BaseNewsLm">	
+ 	<![CDATA[
+	INSERT INTO newslm(id,lmid,lmname,lmtime,lmimg,urllink) VALUES
+	 (#{id},#{lmid},#{lmname},#{lmtime},#{lmimg},#{urllink});
+	]]>  
+	</insert>
+	<delete id="delete" parameterType="BaseNewsLm">
+	DELETE FROM newslm  
+	WHERE 
+	<if test="lmid != null and lmid !='' ">
+        id=#{id}
+    </if>
+	</delete>
+	<delete id="delAll" parameterType="java.util.List">
+	DELETE from newslm 
+	WHERE id in(
+		<foreach item="o" collection="list" open="" separator="," close="" >
+			#{o.id}
+		</foreach>
+		)
+	</delete>
+	<update id="update" parameterType="BaseNewsLm">
+		UPDATE newslm 
+		SET lmid=#{lmid},
+			lmname=#{lmname},
+			lmtime=#{lmtime},
+			lmimg=#{lmimg},
+			urllink=#{urllink}
+		WHERE id=#{id}
+	</update>
+</mapper>

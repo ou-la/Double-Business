@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.repository.TsJyDao">
+	<resultMap id="base" type="BaseTsJy"></resultMap>
+   
+    <select id="find"  resultMap="base" parameterType="BaseTsJy">
+    	SELECT * FROM tsjy
+    </select> 
+    
+    <select id="findByPage"  resultMap="base" parameterType="BaseTsJy">
+      SELECT * FROM tsjy
+    </select>
+      
+    <select id="count"  resultType="int" parameterType="BaseTsJy">
+       SELECT count(*) FROM tsjy t WHERE 1=1 
+    </select>
+    
+    <insert id="insert"  parameterType="BaseTsJy">	
+ 	<![CDATA[
+	INSERT INTO tsjy(id,yOn,xinyong,tstext) VALUES
+	 (#{id},#{yOn},#{xinyong},#{tstext});
+	]]>  
+	</insert>
+	
+	<delete id="delete" parameterType="BaseTsJy">
+	DELETE FROM tsjy  
+	WHERE 
+	<if test="id != null and id !='' ">
+        id=#{id}
+    </if>
+	</delete>
+	
+	<update id="update" parameterType="BaseTsJy">
+		UPDATE tsjy 
+		SET yOn=#{yOn},
+			xinyong=#{xinyong},
+			tstext=#{tstext}
+		WHERE id=#{id}
+	</update>
+	
+	<delete id="delAll" parameterType="java.util.List">
+	DELETE FROM tsjy  
+	WHERE id in(
+		<foreach item="o" collection="list" open="" separator="," close="" >
+			#{o.id}
+		</foreach>
+		)
+	</delete>
+</mapper>

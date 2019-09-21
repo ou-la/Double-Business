@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.repository.CpDao">
+	<resultMap id="base" type="BaseCp"></resultMap>
+   
+    <select id="find"  resultMap="base" parameterType="BaseCp">
+        SELECT * FROM cp 
+        WHERE 1=1 
+       <if test="proid != null and proid !=' ' ">
+        	AND proid=#{proid}
+       </if>
+       <if test="id != null and id !=' ' ">
+        	AND id=#{id}
+       </if>
+       
+       <if test="companyid != null and companyid !=' ' ">
+        	AND companyid=#{companyid}
+       </if>
+    </select> 
+    
+    <select id="findByPage"  resultMap="base" parameterType="BaseCp">
+        SELECT * FROM cp
+        WHERE 1=1 
+       <if test="param.proid != null and param.proid !=' ' ">
+        	AND proid=#{param.proid}
+       </if>
+       <if test="param.typeid != null and param.typeid !=' ' ">
+        	AND typeid=#{param.typeid}
+       </if>
+    </select>
+      
+    <select id="count"  resultType="int" parameterType="BaseCp">
+       SELECT count(*) FROM cp t WHERE 1=1 
+    </select>
+     
+    <insert id="insert"  parameterType="BaseCp">	
+ 	<![CDATA[
+	INSERT INTO cp(proid,proimg,protitle,timelimit,proinfo,protj,prolc,callme,protype,prostate,shnumb,shtime,bhreason,username,protime,rzmoney,company,companyid,companysize,companytype,rzcycle,id,typeid) VALUES
+	 (#{proid},#{proimg},#{protitle},#{timelimit},#{proinfo},#{protj},#{prolc},#{callme},#{protype},#{prostate},#{shnumb},#{shtime},#{bhreason},#{username},#{protime},#{rzmoney},#{company},#{companyid},#{companysize},#{companytype},#{rzcycle},#{id},#{typeid});
+	]]>  
+	</insert>
+	
+	<delete id="delete" parameterType="BaseCp">
+	DELETE FROM cp
+	WHERE 
+	<if test="proid != null and proid!='' ">
+        proid=#{proid}
+    </if>
+	</delete>
+	
+	<update id="update" parameterType="BaseCp">
+		UPDATE cp
+		SET proimg=#{proimg},
+			protitle=#{protitle},
+			timelimit=#{timelimit},
+			proinfo=#{proinfo},
+			protj=#{protj},
+			prolc=#{prolc},
+			callme=#{callme},
+			protype=#{protype},
+			prostate=#{prostate},
+			shnumb=#{shnumb},
+			shtime=#{shtime},
+			bhreason=#{bhreason},
+			username=#{username},
+			protime=#{prostate},
+			rzmoney=#{rzmoney},
+			company=#{company},
+			companyid=#{companyid},
+			companysize=#{companysize},
+			companytype=#{companytype},
+			rzcycle=#{rzcycle},
+			id=#{id},
+			typeid=#{typeid}
+		WHERE proid=#{proid}
+	</update>
+	
+	<delete id="delAll" parameterType="java.util.List">
+	DELETE FROM cp
+	WHERE proid in(
+		<foreach item="o" collection="list" open="" separator="," close="" >
+			#{o.proid}
+		</foreach>
+		)
+	</delete>
+</mapper>

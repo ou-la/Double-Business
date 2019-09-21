@@ -1,0 +1,39 @@
+body{
+	background-image: url(../imgs/orgbg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.container{
+	padding-top: 0;
+	padding-bottom: 0;
+    margin-top: 0.6rem;
+}
+.bian{
+	margin: 0 0.8rem 0 0.8rem;
+	background-color: #fff;
+	padding: 0.4rem;
+	border-radius: 8px;
+}
+.bian img{
+    width: 100%;
+}
+.bian div{
+    line-height: 1.6rem;
+}
+.lft_img{
+	margin: 0;
+    padding: 0;
+    padding-right: 1.2rem;
+}
+.hepin{
+	font-size: 12px;
+	font-weight: bolder;
+}
+.youai{
+	font-size: 9px;
+	color: #969696;
+}
+.ziyou{
+	font-size: 10px;
+	white-space:nowrap;
+}

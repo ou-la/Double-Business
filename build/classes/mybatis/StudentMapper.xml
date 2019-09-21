@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.repository.StudentDao">
+	<resultMap id="base" type="BaseStudent"></resultMap>
+    
+    <select id="find"  resultMap="base" parameterType="BaseStudent">
+       SELECT * FROM students;
+    </select> 
+    <select id="findByPage"  resultMap="base" parameterType="BaseStudent">
+       SELECT * FROM students 
+    </select>  
+    <select id="count"  resultType="int" parameterType="BaseStudent">
+       SELECT count(*) FROM students t WHERE 1=1 
+    </select>      
+    <insert id="insert"  parameterType="BaseStudent">	
+ 	<![CDATA[
+	INSERT INTO students(uid,uname,tel,age,sex) VALUES
+	 (#{uid},#{uname},#{tel},#{age},#{sex});
+	]]>  
+	</insert>
+	<delete id="delete" parameterType="BaseStudent">
+	DELETE FROM students  
+	WHERE 
+	<if test="uid != null and uid!='' ">
+        uid=#{uid}
+    </if>
+	</delete>
+	<delete id="delAll" parameterType="java.util.List">
+	DELETE from students 
+	WHERE uid in(
+		<foreach item="o" collection="list" open="" separator="," close="" >
+			#{o.uid}
+		</foreach>
+		)
+	</delete>
+	<update id="update" parameterType="BaseStudent">
+		UPDATE students 
+		SET uname=#{uname},
+			tel=#{tel},
+			age=#{age},
+			sex=#{sex}
+		WHERE uid=#{uid}
+	</update>
+</mapper>

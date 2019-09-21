@@ -1,0 +1,128 @@
+body{
+	background-image: url(../imgs/gry_bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed; 
+}
+.active>.rr{
+	color: #ffffff !important;
+	background: linear-gradient(to right,#D93102, #F57436);
+	width: 6rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	border-radius: 15px;
+}
+.rr{
+	font-size: 12px;
+}
+.nav-tabs {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+    border-bottom: 0px solid #ddd;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 0px solid #ddd;
+}
+.nav-tabs > li {
+    float: right;
+    margin-bottom: -1px;
+}
+.nav-tabs > li > a {
+	text-align: center;
+	width: 4rem;
+    margin-right: 2px;
+    padding-top: 2px;
+    padding-right: 0;
+    padding-bottom: 2px;
+    padding-left: 0;
+    border: 0px solid transparent;
+    border-radius: 0;
+    color: #A5A5A5
+}
+.nav-tabs > li > a:hover{
+	background-color: #fff;
+}
+.tab-content>div{
+	padding-right: 0;
+	padding-left: 0;
+}
+.tab-content>div img{
+	width: 100%;
+	margin: 0 auto;
+}
+.tab-content>div .wen{
+	width: 90%;
+	position: absolute;
+	text-align: center;
+}
+.tab-content>div .wen_t{
+	color: #fff;
+	margin-top: 3rem;
+	font-weight: 600;
+}
+.tab-content>div .wen_b{
+	color: #fff;
+}
+.tab-content>div .wen_b>p{
+	color: #fff;
+	font-size: 44px;
+	font-weight: 600;
+	margin-top: 5rem;
+	display: inline-block;
+}
+.nnc{
+	padding-left: 0;
+	padding-right: 0;
+    margin-top: 0.6rem;
+}
+.bian{
+	margin: 0 0.8rem 0 0.8rem;
+	background-color: #fff;
+	border-radius: 8px;
+}
+.bian img{
+    width: 100%;
+}
+.bian div{
+    line-height: 1.6rem;
+}
+.lft_img{
+	margin: 0;
+    padding: 0;
+    padding-right: 1.2rem;
+}
+.hepin{
+	font-size: 12px;
+	font-weight: bolder;
+	padding-right: 0;
+}
+.hepin>.hepin_l{
+	text-align: left;
+	padding-left: 0;
+	height: 2rem;
+	line-height: 2rem;
+}
+.hepin>.hepin_r{
+	text-align: center;
+	padding-left: 0;
+	padding-right: 0;
+	height: 2rem;
+	line-height: 2rem;
+	color: #fff;
+	background-color: #F86941;
+	border-radius: 6px;
+}
+.youai{
+	font-size: 9px;
+	color: #969696;
+	padding-right: 10px;
+}
+.ziyou{
+	padding-right: 10px;
+	font-size: 10px;
+	white-space:nowrap;
+	text-align: right;
+}

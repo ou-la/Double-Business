@@ -1,0 +1,206 @@
+.clear{
+	clear: both;
+}
+.title{
+	background-color: #2065B1;
+	height: 4rem;
+	color: #ffffff;
+}
+.title div{
+	text-align: center;
+	height: 4rem;
+	line-height: 4rem;
+	margin: auto;
+	font-weight: bolder;
+}
+.title img{
+	height: 2rem;
+}
+.pic{
+	padding: 0;
+}
+.item{
+	background-color: #E0E0E1;
+}
+.carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img{
+	height: 16rem;
+	margin: 0 auto;
+}
+.five{
+	height: 5.4rem;
+}
+.five div{
+	width: 20%;
+	float: left;
+	text-align: center;
+	height: 3.4rem;
+	line-height: 3.4rem;
+
+}
+.five div img{
+	width: 2rem;
+}
+.five div a{
+	color: #272822;
+}
+.five div a:hover{
+	text-decoration: none;
+}
+.five div a:link{
+	text-decoration: none;
+}
+.five p{
+	font-size: 1.2rem;
+	height: 2rem;
+	line-height: 2rem;
+	font-weight: bold;
+}
+.gempty{
+	width: 100%;
+	height: 1.2rem;
+	margin-top: 0.8rem;
+	background-color: #F4F4F4;
+}
+.tong{
+	height: 6rem;
+	line-height: 6rem;
+	text-align: center;
+}
+.tong img{
+	width: 4rem;
+	height: 4rem;
+}
+.tongw{
+	height: 2rem;
+	line-height: 2rem;
+	font-size: 1.2rem;
+	/*font-weight: bold;*/
+	overflow: hidden;
+	text-align: left;
+	margin-left: -2rem;
+}
+.tongw a{
+	color: #272822;
+}
+.tongw a:hover{
+	text-decoration: none;
+}
+.tongw a:link{
+	text-decoration: none;
+}
+.tongw span{
+	border: 1px solid #F86136;
+	border-radius: 0.4rem;
+	font-weight: lighter;
+	color: #F86136;
+}
+.content{
+	text-align: center;
+	height: 4rem;
+	line-height: 4rem;
+	font-weight: bold;
+	color: #0C58AB;
+}
+.text_a{
+	width: 48%;
+	background-color: #F86941;
+	float: left;
+	padding-top: 1rem;
+	overflow: hidden;
+	color: #ffffff;
+	margin-bottom: 2rem;
+}
+.text_a div a{
+	color: #ffffff;
+}
+.text_a div a:hover{
+	text-decoration: none;
+}
+.text_a div a:link{
+	text-decoration: none;
+}
+.text_a_a{
+	height: 2rem;
+	line-height: 2rem;
+	border-left: 6px solid #2066B2;
+}
+.text_b{
+	width: 48%;
+	background-color: #2066B2;
+	float: right;
+	padding-top: 1rem;
+	overflow: hidden;
+	color: #ffffff;
+	margin-bottom: 2rem;
+}
+.text_b div a{
+	color: #ffffff;
+}
+.text_b div a:hover{
+	text-decoration: none;
+}
+.text_b div a:link{
+	text-decoration: none;
+}
+.text_b_b{
+	border-left: 6px solid #F86941;
+}
+.duijie_l div{
+	height: 4rem;
+	line-height: 4rem;
+}
+.pp{
+	margin-top: -0.6rem;
+	height: 2rem;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover{
+	border:none; 
+	font-weight: bold;
+	color: #2066B2;
+	cursor: default;
+	background-color: #ffffff;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a{
+	border-bottom: 0.4rem solid #2066B2;
+}
+a{
+	color: #2066B2;
+}
+.nav-tabs > li > a{
+	border: none;
+	border-bottom: none;
+}
+.nav > li > a{
+	padding: 10px 0 10px 0;
+	margin: 0 15px 0 15px;
+}
+.nav-tabs{
+	border-bottom: none;
+}
+.tab-content{
+	text-align: center;
+}
+.tab_pic{
+	margin-top: 2rem;
+}
+.tab_pic div a{
+	color: #272822;
+}
+.tab_pic div a:hover{
+	text-decoration: none;
+}
+.tab_pic img{
+	height: 3.4rem;
+}
+.bottom{
+	text-align: center;
+	margin-bottom: 2rem;
+}
+.bottom div{
+	height: 8rem;
+	margin: 2rem 0 0 0;
+	padding: 
+}
+.bottom div img{
+	height: 8rem;
+}

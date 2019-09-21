@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.repository.UserDao">
+	<resultMap id="base" type="BaseUser"></resultMap>
+   
+    <select id="find"  resultMap="base" parameterType="BaseUser">
+    	SELECT u.*,
+		co.companyname AS comname,
+		c.protitle AS pro 
+		FROM `user` u
+		INNER JOIN company co on u.uname=co.boss
+		INNER JOIN cp c on u.uname=c.username		 
+		where 1=1
+       <if test="uid !=null ">
+       		and u.uid=#{uid}
+       </if>
+       <if test="uname !=null">
+       		and u.uname=#{uname}
+       </if>
+    </select> 
+    
+    <select id="findByPage"  resultMap="base" parameterType="BaseUser">
+       SELECT u.uid,
+       u.uname,
+       u.upjone,
+       u.utypeid,
+       u.qiyeid,
+       u.ujifen,
+       u.ufjid,
+       u.ufj,
+       u.loginid FROM `user` u  where 1=1
+       <if test="param.uid != null and param.uid !=' ' ">
+        	AND u.uid=#{param.uid}
+       </if>
+       <if test="param.uname != null and param.uname !=' ' ">
+        	AND u.uname=#{param.uname}
+       </if>
+    </select>
+      
+    <select id="count"  resultType="int" parameterType="BaseUser">
+       SELECT count(*) FROM User t WHERE 1=1 
+    </select>     
+    
+    <select id="countPWD"  resultType="int" parameterType="BaseUser">
+       SELECT count(*) FROM User t  
+       WHERE 1=1 
+      <if test="uid != null">
+        	AND t.uid=#{uid}
+       </if>
+      <if test="uname != null">
+        	AND t.uname=#{uname}
+       </if>
+       <if test="password != null">
+        	AND t.password=#{password}
+       </if>
+    </select>
+    
+    <insert id="insert"  parameterType="BaseUser">	
+ 	<![CDATA[
+	INSERT INTO User(uid,uname,password,upjone,utypeid,qiyeid,ujifen,ufjid,ufj,loginid) VALUES
+	 (#{uid},#{uname},#{password},#{upjone},#{utypeid},#{qiyeid},#{ujifen},#{ufjid},#{ufj},#{loginid});
+	]]>  
+	</insert>
+	
+	<delete id="delete" parameterType="BaseUser">
+	DELETE FROM User  
+	WHERE 
+	<if test="uid != null and uid!='' ">
+        uid=#{uid}
+    </if>
+	</delete>
+	
+	<update id="update" parameterType="BaseUser">
+		UPDATE User 
+		SET uname=#{uname},
+			password=#{password},
+			upjone=#{upjone},
+			utypeid=#{utypeid},
+			qiyeid=#{qiyeid},
+			ujifen=#{ujifen},
+			ufjid=#{ufjid},
+			ufj=#{ufj},
+			loginid=#{loginid}
+		WHERE uid=#{uid}
+	</update>
+	<!-- <delete id="deleteBatch" parameterType="java.util.List">
+	DELETE from students 
+	WHERE id in(
+		<foreach item="o" collection="list" open="" separator="," close="" >
+			#{o.id}
+		</foreach>
+		)
+	</delete> -->
+	
+	<delete id="delAll" parameterType="java.util.List">
+	DELETE FROM User  
+	WHERE uid in(
+		<foreach item="o" collection="list" open="" separator="," close="" >
+			#{o.uid}
+		</foreach>
+		)
+	</delete>
+</mapper>

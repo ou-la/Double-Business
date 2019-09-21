@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.repository.AboutTxtDao">
+	<resultMap id="base" type="BaseAboutTxt"></resultMap>
+   
+    <select id="find"  resultMap="base" parameterType="BaseAboutTxt">
+        SELECT * FROM abouttxt 
+        WHERE 1=1 
+       <if test="id != null and id !=' ' ">
+        	AND id=#{id}
+       </if>
+       <if test="auid != null and auid !=' ' ">
+        	AND auid=#{auid}
+       </if>
+    </select> 
+    
+    <select id="findByPage"  resultMap="base" parameterType="BaseAboutTxt">
+       SELECT * FROM abouttxt 
+        WHERE 1=1 
+       <if test="param.id != null and param.id !=' ' ">
+        	AND id=#{param.id}
+       </if>
+       <if test="param.auid != null and param.auid !=' ' ">
+        	AND auid=#{param.auid}
+       </if>
+    </select>
+      
+    <select id="count"  resultType="int" parameterType="BaseAboutTxt">
+       SELECT count(*) FROM abouttxt WHERE 1=1 
+    </select>
+     
+    <insert id="insert"  parameterType="BaseAboutTxt">	
+ 	<![CDATA[
+	INSERT INTO abouttxt(id,auid,auname,autxt) VALUES
+	 (#{id},#{auid},#{auname},#{autxt});
+	]]>  
+	</insert>
+	
+	<delete id="delete" parameterType="BaseAboutTxt">
+	DELETE FROM abouttxt
+	WHERE 
+	<if test="id != null and id!='' ">
+        id=#{id}
+    </if>
+	</delete>
+	
+	<update id="update" parameterType="BaseAboutTxt">
+		UPDATE abouttxt
+		SET auid=#{auid},
+			auname=#{auname},
+			autxt=#{autxt}
+		WHERE id=#{id}
+	</update>
+	
+	<delete id="delAll" parameterType="java.util.List">
+	DELETE FROM abouttxt
+	WHERE id in(
+		<foreach item="o" collection="list" open="" separator="," close="" >
+			#{o.id}
+		</foreach>
+		)
+	</delete>
+</mapper>

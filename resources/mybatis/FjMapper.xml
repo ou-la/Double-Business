@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.repository.FjDao">
+<resultMap id="base" type="BaseFJ"></resultMap>
+    
+    <select id="find"  resultMap="base" parameterType="BaseFJ">
+        SELECT * FROM fj;
+    </select> 
+    <select id="findByPage"  resultMap="base" parameterType="BaseFJ">
+       SELECT * FROM fj 
+    </select>  
+    <select id="count"  resultType="int" parameterType="BaseFJ">
+       SELECT count(*) FROM fj t WHERE 1=1 
+    </select>      
+    <insert id="insert"  parameterType="BaseFJ">	
+ 	<![CDATA[
+	INSERT INTO fj VALUE
+	 (#{fjid},#{fjname},#{fjfilename},#{fjhz},#{fjsize},#{fjurl},#{fjourl},#{fjtime},#{downloads},#{fjstate});
+	]]>  
+	</insert>
+	<delete id="delete" parameterType="BaseFJ">
+	DELETE FROM fj  
+	WHERE 
+	<if test="fjid != null and fjid!='' ">
+        fjid=#{fjid}
+    </if>
+	</delete>
+	<update id="update" parameterType="BaseFJ">
+		UPDATE fj 
+		SET fjname=#{fjname},
+			fjfilename=#{fjfilename},
+			fjhz=#{fjhz},
+			fjsize=#{fjsize},
+			fjurl=#{fjurl},
+			fjourl=#{fjourl},
+			fjtime=#{fjtime},
+			downloads=#{downloads},
+			fjstate=#{fjstate}
+		WHERE fjid=#{fjid}
+	</update>
+
+</mapper>

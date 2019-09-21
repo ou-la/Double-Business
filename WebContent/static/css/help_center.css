@@ -1,0 +1,41 @@
+.container{
+	color: #fff;
+}
+.help_o{
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.help_o>.help_t{
+	position: absolute;
+	bottom: 0;
+	margin-right: 0;
+}
+.help_o>.help_t .help_t_f{
+	margin-top: 1rem;
+	font-size: 12px;
+}
+.help_o>.help_t .help_t_o p{
+	width: 4.8rem;
+	height: 1.6rem;
+	line-height: 1.6rem;
+	text-align: center;
+	font-size: 12px;
+}
+.help_o>.help_t .help_t_t{
+	font-size: 18px;
+	font-weight: 600;
+}
+.help_o>.help_t .help_t_w{
+	white-space: nowrap;
+	overflow: hidden;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	font-size: 12px;
+}
+.help_t_w>.help_t_w_l{
+	text-align: left;
+}
+.help_t_w_r{
+	text-align: right;
+}

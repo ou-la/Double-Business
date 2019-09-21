@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.repository.ZcZtDao">
+	<resultMap id="base" type="BaseZcZt"></resultMap>
+   
+    <select id="find"  resultMap="base" parameterType="BaseZcZt">
+        SELECT * FROM zczt 
+        WHERE 1=1 
+       <if test="id != null and id !=' ' ">
+        	AND id=#{id}
+       </if>
+       <if test="zid != null and zid !=' ' ">
+        	AND zid=#{zid}
+       </if>
+       <if test="typeid != null and typeid !=' ' ">
+        	AND typeid=#{typeid}
+       </if>
+    </select> 
+    
+    <select id="findByPage"  resultMap="base" parameterType="BaseZcZt">
+       SELECT * FROM zczt 
+       WHERE 1=1 
+       <if test="param.id != null and param.id !=' ' ">
+        	AND id=#{param.id}
+       </if>
+       <if test="param.zid != null and param.zid !=' ' ">
+        	AND zid=#{param.zid}
+       </if>
+    </select>
+      
+    <select id="count"  resultType="int" parameterType="BaseZcZt">
+       SELECT count(*) FROM zczt WHERE 1=1 
+    </select>
+     
+    <insert id="insert"  parameterType="BaseZcZt">	
+ 	<![CDATA[
+	INSERT INTO zczt(id,zid,zname) VALUES
+	 (#{id},#{zid},#{zname});
+	]]>  
+	</insert>
+	
+	<delete id="delete" parameterType="BaseZcZt">
+	DELETE FROM zczt
+	WHERE 
+	<if test="id != null and id!='' ">
+        id=#{id}
+    </if>
+	</delete>
+	
+	<update id="update" parameterType="BaseZcZt">
+		UPDATE zczt
+		SET zid=#{zid},
+			zname=#{zname}
+		WHERE id=#{id}
+	</update>
+	
+	<delete id="delAll" parameterType="java.util.List">
+	DELETE FROM zczt
+	WHERE id in(
+		<foreach item="o" collection="list" open="" separator="," close="" >
+			#{o.id}
+		</foreach>
+		)
+	</delete>
+</mapper>

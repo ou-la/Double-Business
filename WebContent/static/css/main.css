@@ -1,0 +1,61 @@
+a{
+	color: #272822;
+}
+a:hover{
+	color: #272822;
+}
+.pic{
+	margin-top:1rem;
+	margin-bottom: 1rem;
+}
+.title{
+	height: 4rem;
+}
+.title div{
+	text-align: center;
+	height: 4rem;
+	line-height: 4rem;
+	margin: auto;
+	font-weight: bolder;
+}
+.title img{
+	height: 2rem;
+}
+.item{
+	background-color: #E0E0E1;
+}
+.carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img{
+	height: 16rem;
+	margin: 0 auto;
+}
+
+.lins_2{
+	border-bottom: 1px solid #D4D4D4;
+	margin-top: 1rem;
+}
+.last{
+	margin-top: 2rem;
+	margin-bottom: 4rem;
+	text-align: center;
+	border: 1px solid #DCDCDC;
+	border-radius: 15px;
+	margin-left: 0;
+	margin-right: 0;
+}
+.last div{
+	height: 3.4rem;
+	line-height: 3.4rem;
+	font-size: 1.2rem;
+}
+.last div img{
+	width: 2rem;
+	margin-top: -0.6rem;
+}
+.last div a{
+	text-decoration: none;
+}
+.end{
+	border: 1px solid #DCDCDC;
+	border-top: none;
+	border-bottom: none;
+}
